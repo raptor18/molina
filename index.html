@@ -1,21 +1,49 @@
+<!DOCTYPE html>
 <html>
-          <head>
-              <meta charset="utf-8" />
-              <meta name="format-detection" content="telephone=no" />
-              <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-              <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        
-              <title>Acceso a la cámara con PhoneGap</title>
-          </head>
-          <body>
-              <div id="content" style="margin-top: 100px;">
-                  <h1>Acceso a la cámara con PhoneGap</h1>
-                  <button id="takePhoto">TOMAR FOTO</button>
-                  <img id="photo" src=""/>
-                  <button id="sendPhoto">ENVIAR FOTO</button>
-              </div>
-              <script type="text/javascript" src="cordova.js"></script>
-              <script type="text/javascript" src="index.js"></script>
-              <script type="text/javascript">app.initialize();</script>
-          </body>
-      </html>
+
+<head>
+  <meta charset="utf-8">
+  <title>EZoApp</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline' 'unsafe-eval' data: blob: filesystem:">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/2.1.2/normalize.min.css">
+  <link rel="stylesheet" href="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>
+    $(document).on("mobileinit", function () {
+      $.mobile.autoInitializePage = false;
+      $.mobile.hashListeningEnabled = false;
+    });
+
+    function mobileInitPage() {
+      $.mobile.hashListeningEnabled = true;
+      $.mobile.initializePage();
+    }
+  </script>
+  <script src="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <!-- Uncomment the following to include cordova in your app project -->
+  <!-- <script src="//ezoui.com/platforms/android_or_ios/cordova.js"></script> -->
+  <!-- GK Loader use RequireJS to load module -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/require.js/2.1.16/require.min.js"></script>
+  <!--Plug in GK-->
+  <script src="//ezoui.com/components/jquery.gk/jquery.gk.min.js"></script>
+  <!-- Load GK components -->
+  <script components="//ezoui.com/components/gk-ext/image.html" callback="mobileInitPage" src="//ezoui.com/components/gk-loader/gk-loader.min.js"></script>
+</head>
+
+<body>
+  <!-- Page: home  -->
+  <div id="home" data-role="page">
+    <div data-role="header" data-position="fixed">
+      <h3>Carnes Molina</h3> 
+    </div>
+    <div role="main" class="ui-content">
+      <img style="width:100%;" src="http://ezoui.com/images/image.png" is="image">
+      <a class="ui-btn">Button</a>
+      <a class="ui-btn">Button</a>
+    </div>
+  </div>
+</body>
+
+</html>
+
